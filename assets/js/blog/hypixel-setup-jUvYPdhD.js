@@ -1,0 +1,1 @@
+import{M as e,j as t,t as n}from"../Layout-CXA126FR.js";import{t as r}from"../Post-Cb9J-KT9.js";import{n as i}from"../posts-kOY00bNe.js";var a=e(),o=i(`hypixel-setup`);t((0,a.jsx)(n,{active:`blog`,children:(0,a.jsx)(r,{post:o})}));
