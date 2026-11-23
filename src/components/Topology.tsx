@@ -89,7 +89,19 @@ export const Topology = () => (
           stroke="rgba(4,20,26,.5)"
           strokeWidth="0.9"
         />
-        <text className="t-hub" x="282" y="258" textAnchor="middle" fill="#a5b6c6" fontSize="11.5" fontFamily="YekanBakh, sans-serif">
+        <text
+          className="t-hub"
+          x="282"
+          y="252"
+          textAnchor="middle"
+          fill="#b3c3d2"
+          fontSize="11"
+          fontFamily="YekanBakh, sans-serif"
+          stroke="#08111b"
+          strokeWidth="3.4"
+          paintOrder="stroke"
+          strokeLinejoin="round"
+        >
           کلاچ پینگ
         </text>
       </g>
@@ -119,7 +131,7 @@ export const Topology = () => (
           >
             {d.label}
           </text>
-          <text className="t-sub" x="160" y={d.y + 45} textAnchor="middle" fill="#4f6072" fontSize="8.5" fontFamily="ui-monospace, monospace">
+          <text className="t-sub" x="160" y={d.y + 45} textAnchor="middle" fill="#4f6072" fontSize="7.6" fontFamily="ui-monospace, monospace">
             {d.id}.clutchping.com
           </text>
         </g>
