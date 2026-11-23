@@ -1,4 +1,4 @@
-import { faNum } from '../data/site';
+import { faDec, faNum } from '../data/site';
 import { serverIcon } from '../data/servers';
 import type { LeaderRow } from '../data/community';
 
@@ -45,7 +45,7 @@ export const LeaderTable = ({ rows, head = true }: { rows: LeaderRow[]; head?: b
               </span>
             ) : null}
             <span className="badge" style={{ marginInlineStart: 'auto' }}>
-              Lv {faNum(r.level)}
+              سطح {faNum(r.level)}
             </span>
           </span>
 
@@ -53,7 +53,7 @@ export const LeaderTable = ({ rows, head = true }: { rows: LeaderRow[]; head?: b
             <span className="lb-bar-track">
               <span className="lb-bar-fill" style={{ width: `${Math.max((r.hours / max) * 100, 4)}%` }} />
             </span>
-            <span className="lb-hours num">{r.hours.toFixed(1)}</span>
+            <span className="lb-hours num">{faDec(r.hours)}</span>
           </span>
 
           <span className="lb-hours num">{r.longest}</span>

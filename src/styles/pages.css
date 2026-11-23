@@ -423,6 +423,9 @@
 /* ── کارت‌های پلن ── */
 .plans {
   display: grid;
+  width: 100%;
+  max-width: 1140px;
+  margin-inline: auto;
   grid-template-columns: repeat(2, 1fr);
   gap: clamp(1rem, 2vw, 1.5rem);
   align-items: start;
@@ -643,8 +646,8 @@
 
 .srv-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(272px, 1fr));
-  gap: 0.85rem;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 246px), 1fr));
+  gap: 0.9rem;
 }
 
 .srv {
@@ -1562,5 +1565,229 @@
 
   .hero .topo {
     margin-top: 0.4rem;
+  }
+}
+
+/* ══════════════════════════════════════════════════════════════════
+   نمایشگرهای پهن + کارت‌های محصول‌محور
+   ══════════════════════════════════════════════════════════════════ */
+
+@media (min-width: 1280px) {
+  .hero {
+    padding-top: clamp(2.6rem, 3.6vw, 4.4rem);
+    padding-bottom: clamp(2.4rem, 3.2vw, 3.8rem);
+  }
+
+  .hero-in {
+    grid-template-columns: 1.08fr 0.92fr;
+    gap: clamp(2.4rem, 4.2vw, 4.8rem);
+  }
+
+  .hero-lead {
+    max-width: 48ch;
+    font-size: 1.05rem;
+  }
+
+  .stat {
+    padding: 1.35rem 1.55rem;
+  }
+
+  .stats {
+    margin-top: clamp(2.2rem, 3vw, 3.2rem);
+  }
+}
+
+@media (min-width: 1600px) {
+  .hero h1 {
+    font-size: clamp(4.2rem, 3.6vw, 4.9rem);
+  }
+
+}
+
+@media (min-width: 1500px) {
+  .srv-grid {
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 268px), 1fr));
+    gap: 1rem;
+  }
+
+  .step,
+  .faq-item,
+  .cat {
+    --pad-lg: 1.4rem;
+  }
+}
+
+/* ── کارت سرور: تایل محصول ── */
+.srv {
+  padding: 0.95rem 1rem 1rem;
+  border-radius: 18px;
+  overflow: hidden;
+  background:
+    radial-gradient(130% 110% at 100% 0%, rgba(55, 224, 242, 0.07), transparent 58%),
+    linear-gradient(180deg, #0a121a, #070d14);
+}
+
+.srv::after {
+  content: '';
+  position: absolute;
+  inset-inline: 16px;
+  top: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(55, 224, 242, 0.8), transparent);
+  opacity: 0;
+  transition: opacity var(--t) var(--ease);
+}
+
+.srv:hover::after {
+  opacity: 1;
+}
+
+.srv:hover {
+  transform: translateY(-3px);
+  border-color: rgba(55, 224, 242, 0.32);
+  box-shadow:
+    0 24px 46px -34px rgba(55, 224, 242, 0.6),
+    0 0 0 1px rgba(55, 224, 242, 0.12) inset;
+}
+
+.srv-ico {
+  width: 46px;
+  height: 46px;
+  border-radius: 13px;
+  background: #0b141d;
+  transition: transform var(--t) var(--ease);
+}
+
+.srv:hover .srv-ico {
+  transform: scale(1.07) rotate(-2deg);
+}
+
+.srv-name {
+  font-size: 1rem;
+}
+
+.srv-addr {
+  border-radius: 10px;
+  background: rgba(3, 7, 12, 0.78);
+}
+
+/* ── تایل‌های دسترسی سریع ── */
+.cat-tiles {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.9rem;
+}
+
+.cat {
+  position: relative;
+  display: grid;
+  color: inherit;
+  text-decoration: none;
+  gap: 0.5rem;
+  padding: 1.15rem 1.2rem 1.25rem;
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  background: linear-gradient(180deg, #0a121a, #070d15);
+  transition:
+    transform var(--t) var(--ease),
+    border-color var(--t) var(--ease),
+    box-shadow var(--t) var(--ease);
+}
+
+.cat:hover {
+  transform: translateY(-3px);
+  border-color: rgba(55, 224, 242, 0.3);
+  box-shadow: 0 26px 50px -40px rgba(55, 224, 242, 0.75);
+}
+
+.cat-ico {
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  margin-bottom: 0.45rem;
+  border: 1px solid rgba(55, 224, 242, 0.24);
+  border-radius: 14px;
+  background:
+    radial-gradient(120% 120% at 80% 0%, rgba(55, 224, 242, 0.22), transparent 70%),
+    linear-gradient(160deg, rgba(55, 224, 242, 0.12), rgba(139, 123, 255, 0.08));
+  color: var(--cyan);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06);
+  transition:
+    border-color var(--t) var(--ease),
+    box-shadow var(--t) var(--ease);
+}
+
+.cat:hover .cat-ico {
+  border-color: rgba(55, 224, 242, 0.5);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.08),
+    0 0 22px -6px rgba(55, 224, 242, 0.55);
+}
+
+.cat h3 {
+  font-size: 1.02rem;
+  font-weight: var(--fw-semi);
+  line-height: 1.5;
+}
+
+.cat p {
+  font-size: var(--fs-xs);
+  color: var(--txt-3);
+  line-height: 1.8;
+}
+
+.cat-go {
+  position: absolute;
+  inset-inline-end: 1.1rem;
+  top: 1.2rem;
+  display: grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  border: 1px solid var(--line-soft);
+  border-radius: 50%;
+  color: var(--txt-3);
+  background: rgba(255, 255, 255, 0.02);
+  transition:
+    color var(--t) var(--ease),
+    transform var(--t) var(--ease),
+    background var(--t) var(--ease);
+}
+
+.cat:hover .cat-go {
+  color: #04121a;
+  background: var(--cyan);
+  transform: translateX(-3px);
+}
+
+@media (max-width: 900px) {
+  .cat-tiles {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 460px) {
+  .cat-tiles {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* ── محدودکردن عرض فرم‌ها و فهرست‌های دوستونی در نمایشگرهای پهن ── */
+@media (min-width: 1400px) {
+  .order-grid {
+    max-width: 1280px;
+    margin-inline: auto;
+  }
+
+  .post-grid {
+    max-width: 1120px;
+    margin-inline: auto;
+  }
+
+  .lb-table {
+    max-width: 1280px;
+    margin-inline: auto;
   }
 }

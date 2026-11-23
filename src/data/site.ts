@@ -52,3 +52,7 @@ export const asset = (path: string): string => `${BASE}${path.replace(/^\//, '')
 export const faNum = (n: number): string => n.toLocaleString('fa-IR');
 
 export const toman = (n: number): string => `${faNum(n)} تومان`;
+
+/** عدد اعشاری با ارقام فارسی و ممیز فارسی */
+export const faDec = (n: number, digits = 1): string =>
+  n.toLocaleString('fa-IR', { minimumFractionDigits: digits, maximumFractionDigits: digits }).replace('\.', '٫');

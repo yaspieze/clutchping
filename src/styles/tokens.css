@@ -84,8 +84,8 @@
   --fs-2xs: 0.72rem;
 
   /* ── فاصله و گردی ── */
-  --wrap: 1200px;
-  --wrap-narrow: 880px;
+  --wrap: clamp(1180px, 88vw, 1560px);
+  --wrap-narrow: 920px;
   --gutter: clamp(1.15rem, 4vw, 2.5rem);
   --sec-y: clamp(3.2rem, 6vw, 5.6rem);
 

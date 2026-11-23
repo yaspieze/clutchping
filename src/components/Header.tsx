@@ -187,7 +187,7 @@ export const Header = ({ active }: Props) => {
             <ul>
               {SERVERS.slice(0, 8).map((s) => (
                 <li key={s.id}>
-                  <a href={url('/servers/#' + s.id)}>
+                  <a href={url('/servers/#srv-' + s.id)}>
                     <img src={serverIcon(s.id)} alt="" width={16} height={16} loading="lazy" />
                     {s.name}
                   </a>

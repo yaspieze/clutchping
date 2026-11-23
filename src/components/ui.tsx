@@ -11,18 +11,24 @@ export const Reveal = ({
   delay = 0,
   className,
   style,
-  as: Tag = 'div',
+  href,
+  as,
 }: {
   children: ReactNode;
   delay?: number;
   className?: string;
   style?: React.CSSProperties;
-  as?: 'div' | 'li' | 'article' | 'section' | 'header';
-}) => (
-  <Tag className={className} data-reveal style={{ ['--i' as string]: delay, ...style }}>
-    {children}
-  </Tag>
-);
+  href?: string;
+  as?: 'div' | 'li' | 'article' | 'section' | 'header' | 'a';
+}) => {
+  const Tag: React.ElementType = href ? 'a' : (as ?? 'div');
+
+  return (
+    <Tag className={className} href={href} data-reveal style={{ ['--i' as string]: delay, ...style }}>
+      {children}
+    </Tag>
+  );
+};
 
 /* ── بخش و تیتر ────────────────────────────────────────────────── */
 export const Section = ({
@@ -303,7 +309,7 @@ export const PlanCard = ({
       <div className="plan-foot">
         {months > 1 ? (
           <div className="plan-note num">
-            مبلغ {months} ماه پیش از تخفیف دوره: <b>{toman(total)}</b>
+            مبلغ {faNum(months)} ماه پیش از تخفیف دوره: <b>{toman(total)}</b>
           </div>
         ) : null}
         <Btn href={url(`/order/?tier=${plan.id}&plan=${months * 30}`)} variant={plan.highlight ? 'violet' : 'primary'} size="lg" icon="bolt">

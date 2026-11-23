@@ -19,7 +19,18 @@ import { LEADERBOARD, SNAPSHOT, DONORS, DONATE_GOAL } from '../data/community';
 import { SERVERS } from '../data/servers';
 import { SITE, faNum, toman, url } from '../data/site';
 
-const featured = ['hypixel', 'minemen', 'donutsmp', 'cubecraft', 'pika', 'wynncraft'];
+const featured = [
+  'hypixel',
+  'minemen',
+  'cubecraft',
+  'mccisland',
+  'donutsmp',
+  'wynncraft',
+  'pika',
+  'jartex',
+  'mcpvp',
+  'hive',
+];
 
 export const Home = () => (
   <>
@@ -92,6 +103,49 @@ export const Home = () => (
     </section>
 
     <ServerMarquee servers={SERVERS} />
+
+    {/* ── دسترسی سریع ──────────────────────────────────────── */}
+    <div className="wrap">
+      <div className="cat-tiles">
+        {[
+          {
+            href: '/servers/',
+            icon: 'server' as const,
+            title: 'فهرست سرورها',
+            body: `${faNum(SERVERS.length)} سرور با آدرس اختصاصی و وضعیت باز بودن در هر سطح اشتراک.`,
+          },
+          {
+            href: '/store/',
+            icon: 'bolt' as const,
+            title: 'اشتراک پایه و پلاس',
+            body: 'دو سطح، چهار دورهٔ زمانی؛ قیمت روزانه و تخفیف دوره روی همان صفحه محاسبه می‌شود.',
+          },
+          {
+            href: '/leaderboard/',
+            icon: 'trophy' as const,
+            title: 'لیدربورد هفتگی',
+            body: 'زمان بازی بازیکن‌ها روی سرورها، با ریست هر هفته و نشان‌های داخل بازی.',
+          },
+          {
+            href: '/blog/',
+            icon: 'help' as const,
+            title: 'راهنمای اتصال',
+            body: 'تفاوت پینگ و پکت‌لاس، و راه‌اندازی هایپیکسل و بدراک قدم‌به‌قدم.',
+          },
+        ].map((c) => (
+          <Reveal className="cat" key={c.href} as="a" href={url(c.href)}>
+            <span className="cat-go">
+              <Icon name="arrow" size={14} />
+            </span>
+            <span className="cat-ico">
+              <Icon name={c.icon} size={20} />
+            </span>
+            <h3>{c.title}</h3>
+            <p>{c.body}</p>
+          </Reveal>
+        ))}
+      </div>
+    </div>
 
     {/* ── چطور کار می‌کند ───────────────────────────────────── */}
     <Section>
