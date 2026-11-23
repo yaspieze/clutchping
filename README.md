@@ -88,7 +88,15 @@ BASE_PATH=/clutchping/ npm run build
 
 ## انتشار
 
-پوشهٔ `.github/workflows/deploy.yml` در هر push به شاخهٔ `main` این کارها را انجام می‌دهد: نصب وابستگی‌ها، بررسی تایپ، ساخت با `BASE_PATH=/clutchping/`، و انتشار روی GitHub Pages. برای فعال‌سازی، در تنظیمات مخزن → Pages → Source گزینهٔ **GitHub Actions** انتخاب می‌شود.
+سایت روی شاخهٔ `gh-pages` منتشر می‌شود (Settings → Pages → Source: Deploy from a branch → `gh-pages` / `/`). با هر تغییر:
+
+```bash
+npm run build          # خروجی در dist/
+BASE_PATH=/clutchping/ npm run build
+bash scripts/deploy-gh-pages.sh
+```
+
+برای انتقال به انتشار خودکار با GitHub Actions، فایل آمادهٔ `deploy/gh-pages.yml` را به `.github/workflows/deploy.yml` منتقل کنید (یا محتوایش را از رابط وب گیت‌هاب اضافه کنید) و در Settings → Pages گزینهٔ **GitHub Actions** را انتخاب کنید. این workflow در هر push به `main` تایپ‌چک، ساخت و انتشار را انجام می‌دهد.
 
 ## محدودیت‌ها
 

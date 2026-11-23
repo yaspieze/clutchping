@@ -67,10 +67,10 @@ export const Topology = () => (
         <circle cx="376" cy="190" r="11" fill="rgba(55,224,242,.14)" stroke="rgba(55,224,242,.4)" />
         <circle cx="376" cy="187" r="3.2" fill="none" stroke="#7ff0fc" strokeWidth="1.3" />
         <path d="M370.6 196a6.6 6.6 0 0 1 10.8 0" fill="none" stroke="#7ff0fc" strokeWidth="1.3" strokeLinecap="round" />
-        <text className="t-label" x="486" y="185" textAnchor="end" fill="#e8eff6" fontSize="13" fontFamily="YekanBakh, sans-serif" direction="rtl">
+        <text className="t-label" x="438" y="185" textAnchor="middle" fill="#e8eff6" fontSize="13" fontFamily="YekanBakh, sans-serif">
           شما
         </text>
-        <text className="t-sub" x="486" y="202" textAnchor="end" fill="#5c7085" fontSize="9" fontFamily="ui-monospace, monospace">
+        <text className="t-sub" x="438" y="202" textAnchor="middle" fill="#5c7085" fontSize="9" fontFamily="ui-monospace, monospace">
           MINECRAFT
         </text>
       </g>
@@ -110,17 +110,16 @@ export const Topology = () => (
           <image href={serverIcon(d.id)} x="64" y={d.y + 16} width="28" height="28" preserveAspectRatio="xMidYMid slice" />
           <text
             className="t-label"
-            x="200"
-            y={d.y + 30}
-            textAnchor="end"
+            x="160"
+            y={d.y + 31}
+            textAnchor="middle"
             fill="#e8eff6"
             fontSize="12.5"
             fontFamily="YekanBakh, sans-serif"
-            direction="rtl"
           >
             {d.label}
           </text>
-          <text className="t-sub" x="200" y={d.y + 45} textAnchor="end" fill="#4f6072" fontSize="8.5" fontFamily="ui-monospace, monospace">
+          <text className="t-sub" x="160" y={d.y + 45} textAnchor="middle" fill="#4f6072" fontSize="8.5" fontFamily="ui-monospace, monospace">
             {d.id}.clutchping.com
           </text>
         </g>

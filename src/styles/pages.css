@@ -1525,11 +1525,15 @@
   }
 
   .topo svg .t-label {
-    font-size: 17px;
+    font-size: 15px;
   }
 
   .topo svg .t-hub {
-    font-size: 16px;
+    font-size: 14px;
+  }
+
+  .topo svg {
+    max-height: 62vh;
   }
 
   .toolbar .search {
