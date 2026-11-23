@@ -1,0 +1,16 @@
+{
+  "name": "کلاچ پینگ",
+  "short_name": "ClutchPing",
+  "description": "مسیر کوتاه و پایدار برای اتصال به سرورهای ماینکرفت",
+  "lang": "fa",
+  "dir": "rtl",
+  "start_url": "/clutchping/",
+  "scope": "/clutchping/",
+  "display": "standalone",
+  "background_color": "#05080d",
+  "theme_color": "#05080d",
+  "icons": [
+    { "src": "/clutchping/apple-touch-icon.png", "sizes": "180x180", "type": "image/png" },
+    { "src": "/clutchping/favicon.svg", "sizes": "any", "type": "image/svg+xml" }
+  ]
+}

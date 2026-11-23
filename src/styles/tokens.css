@@ -1,0 +1,113 @@
+/* ══════════════════════════════════════════════════════════════════
+   ClutchPing — Design tokens
+   هویت: مشکی‌آبی عمیق + فیروزه‌ای سیگنال + بنفش برای سطح پلاس
+   ══════════════════════════════════════════════════════════════════ */
+
+@font-face {
+  font-family: 'YekanBakh';
+  src: url('/assets/fonts/YekanBakh-Light.woff2') format('woff2');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'YekanBakh';
+  src: url('/assets/fonts/YekanBakh-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'YekanBakh';
+  src: url('/assets/fonts/YekanBakh-SemiBold.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'YekanBakh';
+  src: url('/assets/fonts/YekanBakh-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  /* ── رنگ ── */
+  --ink-0: #04070c;
+  --ink-1: #070c13;
+  --ink-2: #0a1119;
+  --ink-3: #0e1824;
+  --ink-4: #13202e;
+
+  --line: rgba(148, 190, 220, 0.13);
+  --line-soft: rgba(148, 190, 220, 0.07);
+  --line-strong: rgba(148, 190, 220, 0.22);
+
+  --txt: #e8eff6;
+  --txt-2: #a5b6c6;
+  --txt-3: #738698;
+  --txt-4: #4f6072;
+
+  --cyan: #37e0f2;
+  --cyan-1: #21c7dc;
+  --cyan-2: #0e9cb4;
+  --cyan-ink: #04141a;
+  --violet: #8b7bff;
+  --violet-1: #6f5cf5;
+  --amber: #f0b752;
+  --rose: #ff6b7a;
+  --mint: #58d9a5;
+
+  --cyan-08: rgba(55, 224, 242, 0.08);
+  --cyan-14: rgba(55, 224, 242, 0.14);
+  --cyan-22: rgba(55, 224, 242, 0.22);
+  --violet-12: rgba(139, 123, 255, 0.12);
+
+  /* ── تایپوگرافی ── */
+  --font: 'YekanBakh', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --mono: ui-monospace, 'SF Mono', 'Cascadia Mono', 'Roboto Mono', Menlo, monospace;
+
+  --fw-light: 300;
+  --fw: 400;
+  --fw-semi: 600;
+  --fw-bold: 700;
+
+  --fs-display: clamp(2.35rem, 5.4vw, 4.15rem);
+  --fs-h1: clamp(2rem, 4vw, 3.1rem);
+  --fs-h2: clamp(1.55rem, 2.9vw, 2.3rem);
+  --fs-h3: clamp(1.15rem, 1.7vw, 1.42rem);
+  --fs-lead: clamp(0.98rem, 1.15vw, 1.1rem);
+  --fs-body: 1rem;
+  --fs-sm: 0.9rem;
+  --fs-xs: 0.8rem;
+  --fs-2xs: 0.72rem;
+
+  /* ── فاصله و گردی ── */
+  --wrap: 1200px;
+  --wrap-narrow: 880px;
+  --gutter: clamp(1.15rem, 4vw, 2.5rem);
+  --sec-y: clamp(3.2rem, 6vw, 5.6rem);
+
+  --r-xs: 6px;
+  --r-sm: 10px;
+  --r-md: 14px;
+  --r-lg: 20px;
+  --r-xl: 26px;
+  --r-pill: 999px;
+
+  /* ── سایه و حرکت ── */
+  --shadow-card: 0 24px 60px -40px rgba(0, 0, 0, 0.9), inset 0 1px 0 rgba(255, 255, 255, 0.045);
+  --shadow-pop: 0 30px 80px -30px rgba(0, 0, 0, 0.85);
+  --glow-cyan: 0 0 0 1px var(--cyan-22), 0 12px 40px -18px rgba(55, 224, 242, 0.55);
+  --glow-violet: 0 0 0 1px rgba(139, 123, 255, 0.32), 0 14px 44px -20px rgba(139, 123, 255, 0.5);
+
+  --ease: cubic-bezier(0.22, 0.61, 0.36, 1);
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --t-fast: 140ms;
+  --t: 240ms;
+  --t-slow: 460ms;
+
+  --head-h: 68px;
+  color-scheme: dark;
+}

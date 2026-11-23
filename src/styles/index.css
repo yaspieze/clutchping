@@ -1,0 +1,11 @@
+@import './tokens.css';
+@import './base.css';
+@import './ui.css';
+@import './pages.css';
+
+/* پس‌زمینهٔ کارت توپولوژی در حالت کاهش حرکت */
+@media (prefers-reduced-motion: reduce) {
+  .topo .packet {
+    display: none;
+  }
+}
